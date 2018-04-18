@@ -28,6 +28,7 @@
   
 #### (3) 配置网络
    在`App Transport Security Settings`下添加`Allow Arbitrary Loads`类型`Boolean`,值设为`YES`
+   如图![](https://github.com/MagicsSDK/PaySDK/blob/master/ImageCache/屏幕快照%202018-04-18%20下午3.48.00.png)
 
  
  
