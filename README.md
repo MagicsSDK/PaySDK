@@ -72,21 +72,21 @@
     `[payVC buyWithOrder:order];`
  
  #### (3) 登录 delegate
-  `- (void)getPhoneCaptchaSuccess{`
+   `- (void)getPhoneCaptchaSuccess{`
        ` NSLog(@"");`
    `}`
 
-  `- (void)loginFiledWithErrorCode:(NSInteger)code andError:(NSError *)error{`
+   `- (void)loginFiledWithErrorCode:(NSInteger)code andError:(NSError *)error{`
        `NSLog(@"");`
-  `}`
+   `}`
 
-  `- (void)loginSuccess{`
+   `- (void)loginSuccess{`
     `NSLog(@"");`
-  `}`
+   `}`
   
  #### (4) 支付 delegate
-  `- (void)paymentFiledWithErrorInfo:(NSDictionary *)errorInfo{`
+   `- (void)paymentFiledWithErrorInfo:(NSDictionary *)errorInfo{`
 
-  `}`
+   `}`
 
 
