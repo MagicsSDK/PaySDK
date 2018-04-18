@@ -44,22 +44,31 @@
 ##### （1）初始化SDK并登录
   `[[MagicLoginManager sharedManager]MagicManagerInitializeByAppKey:@"97ad057fdd7df1112260dda2cbd0f8fc" andAppSecret:@"d8b412202889d82ab97cdf8c8f7244fa" andChannel:@"appMagics" andPlatform:@"2"];`
 
-    `[MagicLoginManager sharedManager].delegate = self;`
+    `[MagicLoginManager sharedManager].delegate = self;`
+    
     `[[MagicLoginManager sharedManager]startManager];`
     
 
 ##### (2)初始化MagicOrder模型、初始化MagicPayManager并购买
 
     `MagicOrder *order = [MagicOrder new];`
+    
     `order.order_num = @"10";`
+    
     `order.order_sum = @"1";`
+    
     `order.goods_name = @"迈吉客测试001";`
+    
     `order.goods_des = @"迈吉客测试";`
+    
     `order.goods_id = @"12";`
+    
     `order.game_zone = @"大中华区";`
 
     `MagicPayManager *payVC = [[MagicPayManager alloc]init];`
+    
     `payVC.delegate = self;`
+    
     `[payVC buyWithOrder:order];`
  
 
