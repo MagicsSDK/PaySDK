@@ -49,7 +49,7 @@
     `[[MagicLoginManager sharedManager]startManager];`
     
 
-##### (2)初始化MagicOrder模型、初始化MagicPayManager并购买
+ ##### (2)初始化MagicOrder模型、初始化MagicPayManager并购买
 
     `MagicOrder *order = [MagicOrder new];`
     
@@ -71,5 +71,17 @@
     
     `[payVC buyWithOrder:order];`
  
+ #### (3) 登录delegate
+   `- (void)getPhoneCaptchaSuccess{`
+       ` NSLog(@"");`
+    `}`
+
+  `- (void)loginFiledWithErrorCode:(NSInteger)code andError:(NSError *)error{`
+       `NSLog(@"");`
+  `}`
+
+`- (void)loginSuccess{`
+    `NSLog(@"");`
+`}`
 
 
