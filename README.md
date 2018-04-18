@@ -14,6 +14,8 @@
 ### (4) SDK的构成
   SDK 主要由MagicSDK.framework构成；
   SDK 支持armv7、arm64、armv7s架构，IOS 8.0及以上版本；
+  
+## 开发环境搭建
  
 
 
