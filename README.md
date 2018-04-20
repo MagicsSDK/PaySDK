@@ -65,11 +65,13 @@
     
     `order.game_zone = @"大中华区";`
 
-    `MagicPayManager *payVC = [[MagicPayManager alloc]init];`
-    
+    `MagicPayViewController *payVC = [[MagicPayViewController alloc]init];`
+    
     `payVC.delegate = self;`
-    
+    
     `[payVC buyWithOrder:order];`
+    
+    `[self presentViewController:payVC animated:YES completion:nil];`
  
  #### (3) 登录 delegate
    `- (void)getPhoneCaptchaSuccess{`
@@ -85,8 +87,12 @@
    `}`
   
  #### (4) 支付 delegate
+   `- (void)paymentSuccessWithOrder:(MagicOrder *)order{`
+   `  NSLog(@"%@",order);`
+   `}`
+
    `- (void)paymentFiledWithErrorInfo:(NSDictionary *)errorInfo{`
 
-   `}`
+   `}`
 
 
