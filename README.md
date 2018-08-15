@@ -35,9 +35,9 @@
 ## 接入SDK
 
 #### (1) 导入头文件并添加delegate
-  #import <MagicSDK/MagicSDK.h>
-  #import <WebKit/WebKit.h>
-  <MagicLoginDelegate,MagicPayDelegate>
+  `#import <MagicSDK/MagicSDK.h>`
+  `#import <WebKit/WebKit.h>`
+  `<MagicLoginDelegate,MagicPayDelegate>`
 
 #### (2) 初始化SDK、登录、支付模块
  
