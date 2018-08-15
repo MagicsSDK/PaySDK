@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4773F9072123F6DB007D805C /* MagicSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4773F9062123F6DB007D805C /* MagicSDK.bundle */; };
+		4773F90B2123F7DF007D805C /* MagicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4773F90A2123F7DF007D805C /* MagicSDK.framework */; };
+		4773F90E2123F86F007D805C /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4773F90D2123F86F007D805C /* UIView+Toast.m */; };
 		47DDAC72208712B900667D67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDAC71208712B900667D67 /* AppDelegate.m */; };
 		47DDAC78208712B900667D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC76208712B900667D67 /* Main.storyboard */; };
 		47DDAC7A208712BA00667D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC79208712BA00667D67 /* Assets.xcassets */; };
@@ -31,21 +34,14 @@
 		47DDACC62087133F00667D67 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDACB32087133F00667D67 /* AFURLRequestSerialization.m */; };
 		47DDACC72087133F00667D67 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDACB52087133F00667D67 /* AFNetworkReachabilityManager.m */; };
 		47DDACC82087133F00667D67 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDACB62087133F00667D67 /* AFSecurityPolicy.m */; };
-		47DDACCF2087135A00667D67 /* MagicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DDACCE2087135100667D67 /* MagicSDK.framework */; };
 		47DDACD220871EF800667D67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DDACD120871EF800667D67 /* Info.plist */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		47DDACCD2087135100667D67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47DDACC92087135100667D67 /* MagicSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 47CF32D420846E5F002635BB;
-			remoteInfo = MagicSDK;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		4773F9062123F6DB007D805C /* MagicSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MagicSDK.bundle; sourceTree = "<group>"; };
+		4773F90A2123F7DF007D805C /* MagicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicSDK.framework; sourceTree = "<group>"; };
+		4773F90C2123F86F007D805C /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		4773F90D2123F86F007D805C /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		47DDAC6D208712B900667D67 /* MagicPaySDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPaySDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DDAC70208712B900667D67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47DDAC71208712B900667D67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,7 +87,6 @@
 		47DDACB52087133F00667D67 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		47DDACB62087133F00667D67 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		47DDACB72087133F00667D67 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		47DDACC92087135100667D67 /* MagicSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicSDK.xcodeproj; path = ../../../MagicSDK/MagicSDK.xcodeproj; sourceTree = "<group>"; };
 		47DDACD120871EF800667D67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,8 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47DDACCF2087135A00667D67 /* MagicSDK.framework in Frameworks */,
 				47DDAC912087133200667D67 /* WebKit.framework in Frameworks */,
+				4773F90B2123F7DF007D805C /* MagicSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +127,10 @@
 				47DDAC71208712B900667D67 /* AppDelegate.m */,
 				47DDAC8C2087131E00667D67 /* ViewController.h */,
 				47DDAC8D2087131F00667D67 /* ViewController.m */,
-				47DDACC92087135100667D67 /* MagicSDK.xcodeproj */,
+				4773F90C2123F86F007D805C /* UIView+Toast.h */,
+				4773F90D2123F86F007D805C /* UIView+Toast.m */,
+				4773F90A2123F7DF007D805C /* MagicSDK.framework */,
+				4773F9062123F6DB007D805C /* MagicSDK.bundle */,
 				47DDAC76208712B900667D67 /* Main.storyboard */,
 				47DDAC922087133F00667D67 /* AFNetworking */,
 				47DDAC79208712BA00667D67 /* Assets.xcassets */,
@@ -209,14 +207,6 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		47DDACCA2087135100667D67 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				47DDACCE2087135100667D67 /* MagicSDK.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,28 +252,12 @@
 			mainGroup = 47DDAC64208712B900667D67;
 			productRefGroup = 47DDAC6E208712B900667D67 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 47DDACCA2087135100667D67 /* Products */;
-					ProjectRef = 47DDACC92087135100667D67 /* MagicSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				47DDAC6C208712B900667D67 /* MagicPaySDKDemo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		47DDACCE2087135100667D67 /* MagicSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MagicSDK.framework;
-			remoteRef = 47DDACCD2087135100667D67 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		47DDAC6B208712B900667D67 /* Resources */ = {
@@ -294,6 +268,7 @@
 				47DDAC7A208712BA00667D67 /* Assets.xcassets in Resources */,
 				47DDACD220871EF800667D67 /* Info.plist in Resources */,
 				47DDACB92087133F00667D67 /* README.md in Resources */,
+				4773F9072123F6DB007D805C /* MagicSDK.bundle in Resources */,
 				47DDACB82087133F00667D67 /* LICENSE in Resources */,
 				47DDAC78208712B900667D67 /* Main.storyboard in Resources */,
 			);
@@ -313,6 +288,7 @@
 				47DDACBC2087133F00667D67 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				47DDACBB2087133F00667D67 /* UIRefreshControl+AFNetworking.m in Sources */,
 				47DDACC42087133F00667D67 /* AFHTTPSessionManager.m in Sources */,
+				4773F90E2123F86F007D805C /* UIView+Toast.m in Sources */,
 				47DDACC62087133F00667D67 /* AFURLRequestSerialization.m in Sources */,
 				47DDACC32087133F00667D67 /* AFURLResponseSerialization.m in Sources */,
 				47DDAC80208712BA00667D67 /* main.m in Sources */,
@@ -463,8 +439,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3YHQV6TUD8;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = JLW4VA5DN6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MagicPaySDKDemo",
+				);
 				INFOPLIST_FILE = MagicPaySDKDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,6 +453,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = appmagics.com.testPayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eb7e04df-32c1-4f46-a3dc-bb91f0e37919";
+				PROVISIONING_PROFILE_SPECIFIER = any;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -481,8 +463,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3YHQV6TUD8;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MagicPaySDKDemo",
+				);
 				INFOPLIST_FILE = MagicPaySDKDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,6 +477,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = appmagics.com.testPayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

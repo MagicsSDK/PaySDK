@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <MagicSDK/MagicSDK.h>
 #import <WebKit/WebKit.h>
+#import "UIView+Toast.h"
 
 @interface ViewController () <MagicLoginDelegate,MagicPayDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
 
@@ -44,10 +45,10 @@
 }
 
 - (void)loginBtn{
-    [[MagicLoginManager sharedManager]MagicManagerInitializeByAppKey:@"97ad057fdd7df1112260dda2cbd0f8fc" andAppSecret:@"d8b412202889d82ab97cdf8c8f7244fa" andChannel:@"appMagics" andPlatform:@"2"];
-
-    [MagicLoginManager sharedManager].delegate = self;
-    [[MagicLoginManager sharedManager]startManager];
+    [[MagicManager sharedManager]MagicManagerInitializeByAppKey:@"97ad057fdd7df1112260dda2cbd0f8fc" andAppSecret:@"d8b412202889d82ab97cdf8c8f7244fa" andChannel:@"appMagics" andPlatform:@"2"];
+    
+    [MagicManager sharedManager].delegate = self;
+    [[MagicManager sharedManager]startManager];
 }
 
 - (void)payClick{
@@ -60,10 +61,28 @@
     order.goods_id = @"12";
     order.game_zone = @"大中华区";
 
-    MagicPayManager *payVC = [[MagicPayManager alloc]init];
+    MagicPayViewController *payVC = [[MagicPayViewController alloc]init];
     payVC.delegate = self;
+    [self presentViewController:payVC animated:YES completion:nil];
     [payVC buyWithOrder:order];
 }
+
+#pragma mark MagicPayDelegate
+- (void)paymentFiledWithErrorInfo:(NSDictionary *)errorInfo{
+    
+}
+
+#pragma mark MagicLoginDelegate
+- (void)loginFiledWithErrorCode:(NSInteger)code andError:(NSError *)error{
+    [[[UIApplication sharedApplication] delegate].window makeToast:@"登录失败🐱🐱🐱🐱" duration:1.0 position:CSToastPositionCenter];
+}
+
+- (void)loginSuccessWithUserInfo:(NSDictionary *)userInfo{
+    NSLog(@"%@",userInfo);
+    [[[UIApplication sharedApplication] delegate].window makeToast:@"登录成功🤪" duration:1.0 position:CSToastPositionCenter];
+    
+}
+
 
 - (void)paymentSuccessWithUrl:(NSString *)url{
     //根据生成的WKUserScript对象，初始化WKWebViewConfiguration
@@ -93,26 +112,6 @@
 }
 
 #pragma mark - WKNavigationDelegate
-// 页面开始加载时调用
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    NSLog(@"");
-}
-// 当内容开始返回时调用
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
-    NSLog(@"");
-}
-// 页面加载完成之后调用
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    NSLog(@"");
-}
-// 页面加载失败时调用
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
-    NSLog(@"");
-}
-// 接收到服务器跳转请求之后调用
-- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
-    NSLog(@"");
-}
 // 在收到响应后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
 
@@ -179,35 +178,10 @@
     completionHandler();
 }
 
-
-
-
-
-
-
-
-
-
-
 - (void)closeWebView{
     [self.webView removeFromSuperview];
 }
 
-- (void)paymentFiledWithErrorInfo:(NSDictionary *)errorInfo{
-
-}
-
-- (void)getPhoneCaptchaSuccess{
-    NSLog(@"");
-}
-
-- (void)loginFiledWithErrorCode:(NSInteger)code andError:(NSError *)error{
-    NSLog(@"");
-}
-
-- (void)loginSuccess{
-    NSLog(@"");
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
