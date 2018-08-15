@@ -42,11 +42,11 @@
 #### (2) 初始化SDK、登录、支付模块
  
 ##### （1）初始化SDK并登录
-  `[[MagicLoginManager sharedManager]MagicManagerInitializeByAppKey:@"97ad057fdd7df1112260dda2cbd0f8fc" andAppSecret:@"d8b412202889d82ab97cdf8c8f7244fa" andChannel:@"appMagics" andPlatform:@"2"];`
+  `[[[MagicManager sharedManager]MagicManagerInitializeByAppKey:@"97ad057fdd7df1112260dda2cbd0f8fc" andAppSecret:@"d8b412202889d82ab97cdf8c8f7244fa" andChannel:@"appMagics" andPlatform:@"2"]`
 
-    `[MagicLoginManager sharedManager].delegate = self;`
+    `[MagicManager sharedManager].delegate = self;`
     
-    `[[MagicLoginManager sharedManager]startManager];`
+    `[[MagicManager sharedManager]startManager];`
     
 
  ##### (2)初始化MagicOrder模型、初始化MagicPayManager并购买
