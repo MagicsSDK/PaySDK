@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4773F9072123F6DB007D805C /* MagicSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4773F9062123F6DB007D805C /* MagicSDK.bundle */; };
-		4773F90B2123F7DF007D805C /* MagicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4773F90A2123F7DF007D805C /* MagicSDK.framework */; };
 		4773F90E2123F86F007D805C /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4773F90D2123F86F007D805C /* UIView+Toast.m */; };
+		4773F91421240625007D805C /* MagicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4773F91321240625007D805C /* MagicSDK.framework */; };
 		47DDAC72208712B900667D67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDAC71208712B900667D67 /* AppDelegate.m */; };
 		47DDAC78208712B900667D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC76208712B900667D67 /* Main.storyboard */; };
 		47DDAC7A208712BA00667D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC79208712BA00667D67 /* Assets.xcassets */; };
@@ -39,9 +39,9 @@
 
 /* Begin PBXFileReference section */
 		4773F9062123F6DB007D805C /* MagicSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MagicSDK.bundle; sourceTree = "<group>"; };
-		4773F90A2123F7DF007D805C /* MagicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicSDK.framework; sourceTree = "<group>"; };
 		4773F90C2123F86F007D805C /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		4773F90D2123F86F007D805C /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		4773F91321240625007D805C /* MagicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicSDK.framework; sourceTree = "<group>"; };
 		47DDAC6D208712B900667D67 /* MagicPaySDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPaySDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DDAC70208712B900667D67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47DDAC71208712B900667D67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47DDAC912087133200667D67 /* WebKit.framework in Frameworks */,
-				4773F90B2123F7DF007D805C /* MagicSDK.framework in Frameworks */,
+				4773F91421240625007D805C /* MagicSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +129,7 @@
 				47DDAC8D2087131F00667D67 /* ViewController.m */,
 				4773F90C2123F86F007D805C /* UIView+Toast.h */,
 				4773F90D2123F86F007D805C /* UIView+Toast.m */,
-				4773F90A2123F7DF007D805C /* MagicSDK.framework */,
+				4773F91321240625007D805C /* MagicSDK.framework */,
 				4773F9062123F6DB007D805C /* MagicSDK.bundle */,
 				47DDAC76208712B900667D67 /* Main.storyboard */,
 				47DDAC922087133F00667D67 /* AFNetworking */,
