@@ -74,15 +74,12 @@
     `[self presentViewController:payVC animated:YES completion:nil];`
  
  #### (3) 登录 delegate
-   `- (void)getPhoneCaptchaSuccess{`
-       ` NSLog(@"");`
-   `}`
 
    `- (void)loginFiledWithErrorCode:(NSInteger)code andError:(NSError *)error{`
        `NSLog(@"");`
    `}`
 
-   `- (void)loginSuccess{`
+   `- (void)loginSuccessWithUserInfo:(NSDictionary *)userInfo{`
     `NSLog(@"");`
    `}`
   
