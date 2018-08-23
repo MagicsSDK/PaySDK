@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <MagicSDK/MagicSDK.h>
 #import <WebKit/WebKit.h>
+#import <MagicSDK/MagicSDK.h>
 #import "UIView+Toast.h"
 
 @interface ViewController () <MagicLoginDelegate,MagicPayDelegate,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor yellowColor];
+//    return;
     UIButton *testBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     testBtn.backgroundColor = [UIColor redColor];
     [testBtn setTitle:@"登录" forState:UIControlStateNormal];
@@ -36,12 +38,32 @@
     [self.view addSubview:testBtn1];
 
 
-    self.closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 80, 80)];
+    self.closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 400, 80, 80)];
     self.closeBtn.backgroundColor = [UIColor redColor];
-    [self.closeBtn setTitle:@"关闭" forState:UIControlStateNormal];
-    [self.closeBtn addTarget:self action:@selector(closeWebView) forControlEvents:UIControlEventTouchUpInside];
+    [self.closeBtn setTitle:@"上传" forState:UIControlStateNormal];
+    [self.closeBtn addTarget:self action:@selector(putInfo) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.closeBtn];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)putInfo{
+    if (![[MagicManager sharedManager]isLogin]) {
+        [[[UIApplication sharedApplication] delegate].window makeToast:@"📱请先登录📱" duration:1.0 position:CSToastPositionCenter];
+        return;
+    }
+    NSDictionary *info = @{
+                           @"role_id" : @"123",
+                           @"role_name" : @"张三",
+                           @"role_grade" : @"75",
+                           @"server_id" : @"11890",
+                           @"server_name" : @"游戏服务器",
+                           @"extra" : @"这是拓展字段"
+                           };
+    [[MagicManager sharedManager]putUserInfo:info success:^(id responseObject) {
+        NSLog(@"");
+    } failure:^(NSError *error) {
+        NSLog(@"");
+    }];
 }
 
 - (void)loginBtn{
@@ -49,9 +71,15 @@
     
     [MagicManager sharedManager].delegate = self;
     [[MagicManager sharedManager]startManager];
+    
+    
 }
 
 - (void)payClick{
+    if (![[MagicManager sharedManager]isLogin]) {
+         [[[UIApplication sharedApplication] delegate].window makeToast:@"📱请先登录📱" duration:1.0 position:CSToastPositionCenter];
+        return;
+    }
     int x = arc4random() % 10000;
     MagicOrder *order = [MagicOrder new];
     order.order_num = [@"" stringByAppendingFormat:@"%d",x];
@@ -67,12 +95,26 @@
     [payVC buyWithOrder:order];
 }
 
-#pragma mark MagicPayDelegate
-- (void)paymentFiledWithErrorInfo:(NSDictionary *)errorInfo{
-    
+- (void)paymentSuccessWithOrder:(MagicOrder *)order{
+    [[[UIApplication sharedApplication] delegate].window makeToast:[@"📱支付成功📱 == " stringByAppendingFormat:@"%@",order.goods_name] duration:1.0 position:CSToastPositionCenter];
 }
 
-#pragma mark MagicLoginDelegate
+- (void)cancelPayment{
+     [[[UIApplication sharedApplication] delegate].window makeToast:@"📱取消支付📱" duration:1.0 position:CSToastPositionCenter];
+
+}
+
+
+
+- (void)paymentFiledWithErrorInfo:(NSDictionary *)errorInfo{
+
+     [[[UIApplication sharedApplication] delegate].window makeToast:[@"支付失败🐱🐱🐱🐱" stringByAppendingFormat:@"%@",errorInfo[@"error"]] duration:1.0 position:CSToastPositionCenter];
+}
+
+- (void)getPhoneCaptchaSuccess{
+     [[[UIApplication sharedApplication] delegate].window makeToast:@"获取验证码成功🐱🐱🐱🐱" duration:1.0 position:CSToastPositionCenter];
+}
+
 - (void)loginFiledWithErrorCode:(NSInteger)code andError:(NSError *)error{
     [[[UIApplication sharedApplication] delegate].window makeToast:@"登录失败🐱🐱🐱🐱" duration:1.0 position:CSToastPositionCenter];
 }
@@ -83,106 +125,9 @@
     
 }
 
-
-- (void)paymentSuccessWithUrl:(NSString *)url{
-    //根据生成的WKUserScript对象，初始化WKWebViewConfiguration
-    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
-    config.userContentController = [WKUserContentController new];
-    [config.userContentController addScriptMessageHandler:self name:@"NativeMethod"];
-    [config.userContentController addScriptMessageHandler:self name:@"close"];
-//
-//    WKPreferences *preferences = [WKPreferences new];
-//    preferences.javaScriptCanOpenWindowsAutomatically = YES;
-//    preferences.minimumFontSize = 40.0;
-//    config.preferences = preferences;
-
-    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) configuration:config];
-    self.webView.UIDelegate = self;
-    self.webView.navigationDelegate = self;
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
-    [self.view insertSubview:self.webView belowSubview:self.closeBtn];
-
-//    [self.view addSubview:_webView];
+- (void)logOut{
+    NSLog(@"注销登录============");
 }
-
-#pragma mark - MessageHandler
-- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
-    NSLog(@"ActionName==== %@",message.name);
-    NSLog(@"");
-}
-
-#pragma mark - WKNavigationDelegate
-// 在收到响应后，决定是否跳转
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-
-    NSLog(@"%@",navigationResponse.response.URL.absoluteString);
-    //允许跳转
-    decisionHandler(WKNavigationResponsePolicyAllow);
-    //不允许跳转
-    //decisionHandler(WKNavigationResponsePolicyCancel);
-}
-// 在发送请求之前，决定是否跳转
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-
-    NSLog(@"%@",navigationAction.request.URL.absoluteString);
-    //允许跳转
-    decisionHandler(WKNavigationActionPolicyAllow);
-
-    NSString* reqUrl = navigationAction.request.URL.absoluteString;
-    if ([reqUrl hasPrefix:@"alipays://"] || [reqUrl hasPrefix:@"alipay://"]) {
-        // NOTE: 跳转支付宝App
-        BOOL bSucc = [[UIApplication sharedApplication]openURL:navigationAction.request.URL];
-
-        // NOTE: 如果跳转失败，则跳转itune下载支付宝App
-        if (!bSucc) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示"
-                                                           message:@"未检测到支付宝客户端，请安装后重试。"
-                                                          delegate:self
-                                                 cancelButtonTitle:@"立即安装"
-                                                 otherButtonTitles:nil];
-            [alert show];
-        }
-    }else if ( [reqUrl hasPrefix:@"weixin://"]){
-        BOOL bSucc = [[UIApplication sharedApplication]openURL:navigationAction.request.URL];
-
-        // NOTE: 如果跳转失败，则跳转itune下载支付宝App
-        if (!bSucc) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示"
-                                                           message:@"未检测到微信客户端，请安装后重试。"
-                                                          delegate:self
-                                                 cancelButtonTitle:@"立即安装"
-                                                 otherButtonTitles:nil];
-            [alert show];
-        }
-    }
-    //不允许跳转
-    //decisionHandler(WKNavigationActionPolicyCancel);
-}
-
-#pragma mark - WKUIDelegate
-// 创建一个新的WebView
-- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures{
-    return [[WKWebView alloc]init];
-}
-// 输入框
-- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * __nullable result))completionHandler{
-    completionHandler(@"http");
-}
-// 确认框
-- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler{
-    completionHandler(YES);
-}
-// 警告框
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
-    NSLog(@"%@",message);
-    completionHandler();
-}
-
-- (void)closeWebView{
-    [self.webView removeFromSuperview];
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

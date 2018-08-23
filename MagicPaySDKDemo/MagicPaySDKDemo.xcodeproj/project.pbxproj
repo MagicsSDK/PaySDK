@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		471FF2D92126BA250071C137 /* MagicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 471FF2D82126BA250071C137 /* MagicSDK.framework */; };
-		4773F9072123F6DB007D805C /* MagicSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4773F9062123F6DB007D805C /* MagicSDK.bundle */; };
-		4773F90E2123F86F007D805C /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4773F90D2123F86F007D805C /* UIView+Toast.m */; };
+		474F7177212E89A60047A82E /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 474F7176212E89A60047A82E /* UIView+Toast.m */; };
+		474F717A212E89AF0047A82E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474F7178212E89AF0047A82E /* ViewController.m */; };
+		474F717C212E89BD0047A82E /* MagicSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 474F717B212E89BD0047A82E /* MagicSDK.bundle */; };
+		474F717E212E89C10047A82E /* MagicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474F717D212E89C10047A82E /* MagicSDK.framework */; };
 		47DDAC72208712B900667D67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDAC71208712B900667D67 /* AppDelegate.m */; };
 		47DDAC78208712B900667D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC76208712B900667D67 /* Main.storyboard */; };
 		47DDAC7A208712BA00667D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC79208712BA00667D67 /* Assets.xcassets */; };
 		47DDAC7D208712BA00667D67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC7B208712BA00667D67 /* LaunchScreen.storyboard */; };
 		47DDAC80208712BA00667D67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDAC7F208712BA00667D67 /* main.m */; };
-		47DDAC8E2087131F00667D67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDAC8D2087131F00667D67 /* ViewController.m */; };
 		47DDAC912087133200667D67 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DDAC902087133200667D67 /* WebKit.framework */; };
 		47DDACB82087133F00667D67 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC932087133F00667D67 /* LICENSE */; };
 		47DDACB92087133F00667D67 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47DDAC942087133F00667D67 /* README.md */; };
@@ -38,10 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		471FF2D82126BA250071C137 /* MagicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicSDK.framework; sourceTree = "<group>"; };
-		4773F9062123F6DB007D805C /* MagicSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MagicSDK.bundle; sourceTree = "<group>"; };
-		4773F90C2123F86F007D805C /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
-		4773F90D2123F86F007D805C /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		474F7175212E89A60047A82E /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		474F7176212E89A60047A82E /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		474F7178212E89AF0047A82E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		474F7179212E89AF0047A82E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		474F717B212E89BD0047A82E /* MagicSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MagicSDK.bundle; sourceTree = "<group>"; };
+		474F717D212E89C10047A82E /* MagicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicSDK.framework; sourceTree = "<group>"; };
 		47DDAC6D208712B900667D67 /* MagicPaySDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPaySDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DDAC70208712B900667D67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47DDAC71208712B900667D67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,8 +51,6 @@
 		47DDAC79208712BA00667D67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47DDAC7C208712BA00667D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47DDAC7F208712BA00667D67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		47DDAC8C2087131E00667D67 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		47DDAC8D2087131F00667D67 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		47DDAC902087133200667D67 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		47DDAC932087133F00667D67 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		47DDAC942087133F00667D67 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47DDAC912087133200667D67 /* WebKit.framework in Frameworks */,
-				471FF2D92126BA250071C137 /* MagicSDK.framework in Frameworks */,
+				474F717E212E89C10047A82E /* MagicSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,12 +125,12 @@
 			children = (
 				47DDAC70208712B900667D67 /* AppDelegate.h */,
 				47DDAC71208712B900667D67 /* AppDelegate.m */,
-				47DDAC8C2087131E00667D67 /* ViewController.h */,
-				47DDAC8D2087131F00667D67 /* ViewController.m */,
-				4773F90C2123F86F007D805C /* UIView+Toast.h */,
-				4773F90D2123F86F007D805C /* UIView+Toast.m */,
-				471FF2D82126BA250071C137 /* MagicSDK.framework */,
-				4773F9062123F6DB007D805C /* MagicSDK.bundle */,
+				474F7179212E89AF0047A82E /* ViewController.h */,
+				474F7178212E89AF0047A82E /* ViewController.m */,
+				474F7175212E89A60047A82E /* UIView+Toast.h */,
+				474F7176212E89A60047A82E /* UIView+Toast.m */,
+				474F717D212E89C10047A82E /* MagicSDK.framework */,
+				474F717B212E89BD0047A82E /* MagicSDK.bundle */,
 				47DDAC76208712B900667D67 /* Main.storyboard */,
 				47DDAC922087133F00667D67 /* AFNetworking */,
 				47DDAC79208712BA00667D67 /* Assets.xcassets */,
@@ -268,7 +268,7 @@
 				47DDAC7A208712BA00667D67 /* Assets.xcassets in Resources */,
 				47DDACD220871EF800667D67 /* Info.plist in Resources */,
 				47DDACB92087133F00667D67 /* README.md in Resources */,
-				4773F9072123F6DB007D805C /* MagicSDK.bundle in Resources */,
+				474F717C212E89BD0047A82E /* MagicSDK.bundle in Resources */,
 				47DDACB82087133F00667D67 /* LICENSE in Resources */,
 				47DDAC78208712B900667D67 /* Main.storyboard in Resources */,
 			);
@@ -283,13 +283,13 @@
 			files = (
 				47DDACC52087133F00667D67 /* AFURLSessionManager.m in Sources */,
 				47DDACBA2087133F00667D67 /* UIProgressView+AFNetworking.m in Sources */,
-				47DDAC8E2087131F00667D67 /* ViewController.m in Sources */,
 				47DDACC02087133F00667D67 /* UIWebView+AFNetworking.m in Sources */,
 				47DDACBC2087133F00667D67 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				47DDACBB2087133F00667D67 /* UIRefreshControl+AFNetworking.m in Sources */,
 				47DDACC42087133F00667D67 /* AFHTTPSessionManager.m in Sources */,
-				4773F90E2123F86F007D805C /* UIView+Toast.m in Sources */,
+				474F7177212E89A60047A82E /* UIView+Toast.m in Sources */,
 				47DDACC62087133F00667D67 /* AFURLRequestSerialization.m in Sources */,
+				474F717A212E89AF0047A82E /* ViewController.m in Sources */,
 				47DDACC32087133F00667D67 /* AFURLResponseSerialization.m in Sources */,
 				47DDAC80208712BA00667D67 /* main.m in Sources */,
 				47DDACC82087133F00667D67 /* AFSecurityPolicy.m in Sources */,
@@ -451,7 +451,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = appmagics.com.testPayDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = appmagics.com.testPayDemooo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "eb7e04df-32c1-4f46-a3dc-bb91f0e37919";
 				PROVISIONING_PROFILE_SPECIFIER = any;
@@ -475,7 +475,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = appmagics.com.testPayDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = appmagics.com.testPayDemooo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
