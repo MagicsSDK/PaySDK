@@ -65,5 +65,9 @@
  */
 - (BOOL)isLogin;
 
+/**
+ @bref 销毁引擎
+ */
+- (void)destroyManager;
 @end
 

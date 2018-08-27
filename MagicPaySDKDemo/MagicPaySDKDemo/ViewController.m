@@ -38,12 +38,22 @@
     [self.view addSubview:testBtn1];
 
 
+    UIButton *testBtn2 = [[UIButton alloc] initWithFrame:CGRectMake(200, 350, 100, 100)];
+    testBtn2.backgroundColor = [UIColor redColor];
+    [testBtn2 setTitle:@"销毁" forState:UIControlStateNormal];
+    [testBtn2 addTarget:self action:@selector(destroyClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:testBtn2];
+    
     self.closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 400, 80, 80)];
     self.closeBtn.backgroundColor = [UIColor redColor];
     [self.closeBtn setTitle:@"上传" forState:UIControlStateNormal];
     [self.closeBtn addTarget:self action:@selector(putInfo) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.closeBtn];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)destroyClick{
+    [[MagicManager sharedManager] destroyManager];
 }
 
 - (void)putInfo{
