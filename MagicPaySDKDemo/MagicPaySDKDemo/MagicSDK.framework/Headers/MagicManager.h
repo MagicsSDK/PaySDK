@@ -11,7 +11,7 @@
 
 @protocol MagicLoginDelegate <NSObject>
 
-- (void)loginFiledWithErrorCode:(NSInteger)code andError:(NSError *)error; //失败
+- (void)loginFiledWithInfo:(NSDictionary *)info; //失败
 
 - (void)loginSuccessWithUserInfo:(NSDictionary *)userInfo;
 

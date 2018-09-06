@@ -49,7 +49,19 @@
     [self.closeBtn setTitle:@"上传" forState:UIControlStateNormal];
     [self.closeBtn addTarget:self action:@selector(putInfo) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.closeBtn];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self initManager];
+}
+
+- (void)initManager{
+    [[MagicManager sharedManager]MagicManagerInitializeByAppKey:@"97ad057fdd7df1112260dda2cbd0f8fc" andAppSecret:@"d8b412202889d82ab97cdf8c8f7244fa" andChannel:@"appMagics" andPlatform:@"2"];
+    
+}
+
+- (void)loginBtn{
+    [MagicManager sharedManager].delegate = self;
+    [[MagicManager sharedManager]startManager];
+    
 }
 
 - (void)destroyClick{
@@ -74,16 +86,10 @@
     } failure:^(NSError *error) {
         NSLog(@"");
     }];
+    
 }
 
-- (void)loginBtn{
-    [[MagicManager sharedManager]MagicManagerInitializeByAppKey:@"97ad057fdd7df1112260dda2cbd0f8fc" andAppSecret:@"d8b412202889d82ab97cdf8c8f7244fa" andChannel:@"appMagics" andPlatform:@"2"];
-    
-    [MagicManager sharedManager].delegate = self;
-    [[MagicManager sharedManager]startManager];
-    
-    
-}
+
 
 - (void)payClick{
     if (![[MagicManager sharedManager]isLogin]) {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4742C029213FD67900215542 /* MagicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4742C028213FD67900215542 /* MagicSDK.framework */; };
 		474F7177212E89A60047A82E /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 474F7176212E89A60047A82E /* UIView+Toast.m */; };
 		474F717A212E89AF0047A82E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474F7178212E89AF0047A82E /* ViewController.m */; };
 		474F717C212E89BD0047A82E /* MagicSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 474F717B212E89BD0047A82E /* MagicSDK.bundle */; };
@@ -35,10 +34,10 @@
 		47DDACC72087133F00667D67 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDACB52087133F00667D67 /* AFNetworkReachabilityManager.m */; };
 		47DDACC82087133F00667D67 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DDACB62087133F00667D67 /* AFSecurityPolicy.m */; };
 		47DDACD220871EF800667D67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DDACD120871EF800667D67 /* Info.plist */; };
+		47FAB6172140D68A0049A4A9 /* MagicSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FAB6162140D68A0049A4A9 /* MagicSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4742C028213FD67900215542 /* MagicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicSDK.framework; sourceTree = "<group>"; };
 		474F7175212E89A60047A82E /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		474F7176212E89A60047A82E /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		474F7178212E89AF0047A82E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		47DDACB62087133F00667D67 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		47DDACB72087133F00667D67 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		47DDACD120871EF800667D67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47FAB6162140D68A0049A4A9 /* MagicSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagicSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47DDAC912087133200667D67 /* WebKit.framework in Frameworks */,
-				4742C029213FD67900215542 /* MagicSDK.framework in Frameworks */,
+				47FAB6172140D68A0049A4A9 /* MagicSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +129,7 @@
 				474F7178212E89AF0047A82E /* ViewController.m */,
 				474F7175212E89A60047A82E /* UIView+Toast.h */,
 				474F7176212E89A60047A82E /* UIView+Toast.m */,
-				4742C028213FD67900215542 /* MagicSDK.framework */,
+				47FAB6162140D68A0049A4A9 /* MagicSDK.framework */,
 				474F717B212E89BD0047A82E /* MagicSDK.bundle */,
 				47DDAC76208712B900667D67 /* Main.storyboard */,
 				47DDAC922087133F00667D67 /* AFNetworking */,
